@@ -1,28 +1,38 @@
 UDP Broadcast example
 =====================
 
-This examle is based on pont.net
-change to support UDP broadcast client/server
+This is an example for showing communication between client and server through udp protocol.
 
-gcc udpClient.c -o udpClient
+make sure you have the sfml libraries installed before proceding.
 
-gcc udpServer.c -o udpServer
+to install sfml libraries
 
-ARM static compile
+sudo apt-get install libsfml-dev
+
+
+Compiling and running
 ==================
 
-arm-none-linux-gnueabi-gcc -static udpServer.c -o udpServer-arm
+type make to compile. and use ./udp for running the application
 
 Server side:
 ============
 
-./udpServer
+once server is started it first waits for the message from client. once it recieves a message
+
+it gets connected to the client which've sent the message.
 
 Client side:
 ============
 
-./udpClient 255.255.255.255 TEST
+once client is started you need to give the ip address of server.
 
-Send a broadcast message via UDP
+Or you can use 255.255.255.255 for broadcasting on the network.
+
+now you can start sending messages through client to server
+
+once a message is sent you have to wait till the replay to
+
+send further messages
 
  
